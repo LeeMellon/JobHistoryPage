@@ -9,12 +9,12 @@ namespace Resumes.Models
     private string _jobTitle;
     private string _jobDescription;
     private string _duration;
-    private int _contactNumber;
+    private long _contactNumber;
     private string _contactAddress;
     private int _finalWage;
     private static List<Resume> _instances = new List<Resume> {};
 
-    public Resume (string businessName, string jobTitle, string jobDescription, string duration, int finalWage, string contactAddress, int contactNumber)
+    public Resume (string businessName, string jobTitle, string jobDescription, string duration, int finalWage, string contactAddress, long contactNumber)
     {
       _businessName = businessName;
       _jobTitle = jobTitle;
@@ -64,11 +64,11 @@ namespace Resumes.Models
     {
       _contactAddress = newContactAddress;
     }
-    public int GetContactNumber()
+    public long GetContactNumber()
     {
       return _contactNumber;
     }
-    public void SetContactNumber(int newContactNumber)
+    public void SetContactNumber(long newContactNumber)
     {
       _contactNumber = newContactNumber;
     }
@@ -87,6 +87,15 @@ namespace Resumes.Models
     public void JobSave()
     {
       _instances.Add(this);
+    }
+    // public void JobDelete()
+    // {
+    //   _instances.Delete(this);
+    // }
+    public static List<Resume> DelAll()
+    {
+      _instances.Clear();
+      return _instances;
     }
   }
 

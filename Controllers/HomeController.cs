@@ -13,16 +13,22 @@ namespace Resumes.Controllers
           List<Resume> allJobs = Resume.GetAll();
           return View (allJobs);
         }
+
     [HttpPost("/")]
         public ActionResult Create()
         {
-          Resume newResume = new Resume(Request.Form["bizName"], Request.Form["jobTitle"], Request.Form["jobDescription"], Request.Form["duration"], Convert.ToInt32(Request.Form["finalWage"]), Request.Form["mail"],Convert.ToInt32(Request.Form["phone"]));
+          Resume newResume = new Resume(Request.Form["bizName"], Request.Form["jobTitle"], Request.Form["jobDescription"], Request.Form["duration"], Convert.ToInt32(Request.Form["finalWage"]), Request.Form["mail"],Convert.ToInt64(Request.Form["phone"]));
           newResume.JobSave();
           List<Resume> allJobs = Resume.GetAll();
-          return View (allJobs);
+          return View ("index", allJobs);
         }
 
-
+        [HttpPost("/Clear")]
+            public ActionResult Clear()
+            {
+              List<Resume> allJobs = Resume.DelAll();
+              return View ("Clear");
+            }
 
   }
 }
