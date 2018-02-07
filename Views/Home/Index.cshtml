@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Work History</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+    <div class="container">
+      <div class="well">
+        <h1>Fill in your work history below</h1>
+        <form action='/' method="post">
+          <div class='form-group'>
+            <label for='makeModel'>Buisiness Name</label>
+            <input id='bizName' name='bizName' class='form-control' type='text'>
+          </div>
+          <div class='form-group'>
+            <label for='jobTitle'>Job Title</label>
+            <input id='jobTitle' name='jobTitle' class='form-control' type='text'>
+          </div>
+          <div class='form-group'>
+            <label for='jobDescription'>Job Description</label>
+            <input id='jobDescription' name='jobDescription' class='form-control' type='text'>
+          </div>
+          <div class='form-group'>
+            <label for='duration'>Duration of Employment</label>
+            <input id='duration' name='duration' class='form-control' type='text'>
+          </div>
+          <div class='form-group'>
+            <label for='finalWage'>Final Wage</label>
+            <input id='finalWage' name='finalWage' class='form-control' type='number'>
+          </div>
+          <div class='form-group'>
+            <label for='mail'>Employer's Email Address</label>
+            <input id='mail' name='mail' class='form-control' type='text'>
+          </div>
+          <div class='form-group'>
+            <label for='phone'>Employer's Phone Number</label>
+            <input id='phone' name='phone' class='form-control' type='number'>
+          </div>
+          <button type='submit' class='btn btn-success'>Add This Job</button>
+        </form>
+      </div>
+      <div class="well" id="jobsDisplay">
+        @foreach(var job in Model)
+        {
+          <p>@job.GetBusinessName()</p>
+          <p>@job.GetJobTitle()</p>
+          <p>@job.GetJobDescription()</p>
+          <p>@job.GetDuration()</p>
+          <p>@job.GetFinalWage()</p>
+          <p>@job.GetContactAddress()</p>
+          <p>@job.GetContactNumber()</p>
+        }
+
+
+      </div>
+    </div>
+  </body>
+</html>

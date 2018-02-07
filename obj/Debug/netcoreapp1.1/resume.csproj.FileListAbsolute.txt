@@ -1,0 +1,8 @@
+/Users/Guest/Desktop/resume/bin/Debug/netcoreapp1.1/resume.deps.json
+/Users/Guest/Desktop/resume/bin/Debug/netcoreapp1.1/resume.runtimeconfig.json
+/Users/Guest/Desktop/resume/bin/Debug/netcoreapp1.1/resume.runtimeconfig.dev.json
+/Users/Guest/Desktop/resume/bin/Debug/netcoreapp1.1/resume.dll
+/Users/Guest/Desktop/resume/bin/Debug/netcoreapp1.1/resume.pdb
+/Users/Guest/Desktop/resume/obj/Debug/netcoreapp1.1/resume.AssemblyInfo.cs
+/Users/Guest/Desktop/resume/obj/Debug/netcoreapp1.1/resume.dll
+/Users/Guest/Desktop/resume/obj/Debug/netcoreapp1.1/resume.pdb
