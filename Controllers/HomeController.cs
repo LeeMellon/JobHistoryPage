@@ -23,12 +23,21 @@ namespace Resumes.Controllers
           return View ("index", allJobs);
         }
 
-        [HttpPost("/Clear")]
-            public ActionResult Clear()
-            {
-              List<Resume> allJobs = Resume.DelAll();
-              return View ("Clear");
-            }
+      [HttpPost("/Clear")]
+          public ActionResult Clear()
+          {
+            List<Resume> allJobs = Resume.DelAll();
+            return View ("Clear");
+          }
 
+
+          [HttpPost("/OneDown")]
+              public ActionResult OneDown()
+              {
+                int targetId = Convert.ToInt32(Request.Form["id"]);
+                Resume targetRes = Resume.Find(targetId);
+                targetRes.JobDelete();
+                return View ("OneDown");
+              }
   }
 }

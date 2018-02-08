@@ -12,6 +12,7 @@ namespace Resumes.Models
     private long _contactNumber;
     private string _contactAddress;
     private int _finalWage;
+    private int _id;
     private static List<Resume> _instances = new List<Resume> {};
 
     public Resume (string businessName, string jobTitle, string jobDescription, string duration, int finalWage, string contactAddress, long contactNumber)
@@ -23,6 +24,7 @@ namespace Resumes.Models
       _contactNumber = contactNumber;
       _contactAddress = contactAddress;
       _finalWage = finalWage;
+      _id = _instances.Count;
     }
     public string GetBusinessName()
     {
@@ -80,6 +82,10 @@ namespace Resumes.Models
     {
       _finalWage = newFinalWage;
     }
+    public int GetId()
+    {
+      return _id;
+    }
     public static List<Resume> GetAll()
     {
       return _instances;
@@ -88,10 +94,17 @@ namespace Resumes.Models
     {
       _instances.Add(this);
     }
-    // public void JobDelete()
-    // {
-    //   _instances.Delete(this);
-    // }
+
+    public void JobDelete()
+    {
+      _instances.Remove(this);
+    }
+
+    public static Resume Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
+
     public static List<Resume> DelAll()
     {
       _instances.Clear();
